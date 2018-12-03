@@ -15,9 +15,9 @@ describe( 'lib/Statement', function () {
 	before( function () {
 		var pool = new Pool( {
 			max : 1,
-			database : 'test@ol_informix1210',
-			username : 'informix',
-			password : 'informix'
+			database : 'test@informixoltp_tcp',
+      username : 'informix',
+      password : '1nf0rm1x'
 		} );
 
 		return pool.acquire()
@@ -154,7 +154,7 @@ describe( 'lib/Statement', function () {
 					} )
 					.catch( function ( err ) {
 						expect( err ).to.be.an.instanceof( Error );
-						expect( err.message ).to.be.string( '[-254] Too many or too few host variables given.' );
+						expect( err.message ).to.be.string( 'Too many or too few host variables given.' );
 					} );
 			} );
 

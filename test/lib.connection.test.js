@@ -46,22 +46,22 @@ describe( 'lib/Connection', function () {
 
 		it( 'should resolve the promise upon success', function () {
 			var params = {
-				database : 'test@ol_informix1210',
+				database : 'test@informixoltp_tcp',
 				username : 'informix',
-				password : 'informix'
+				password : '1nf0rmix'
 			};
 
 			return conn.connect( params )
 				.then( function ( c ) {
 					expect( c ).to.be.an.instanceof( Connection );
-				} );
+        } );
 		} );
 
 		it( 'should reject the the promise upon failure', function () {
 			var params = {
-				database : 'dummy@ol_informix1210',
+				database : 'dummy@informixoltp_tcp',
 				username : 'informix',
-				password : 'informix'
+				password : '1nf0rm1x'
 			};
 
 			return conn.connect( params )
@@ -76,15 +76,15 @@ describe( 'lib/Connection', function () {
 
 		it( 'should set the INFORMIXSERVER environment variable', function () {
 			var params = {
-				database : 'test@ol_informix1210',
+				database : 'test@informixoltp_tcp',
 				username : 'informix',
-				password : 'informix'
+				password : '1nf0rm1x'
 			};
 
 			process.env.INFORMIXSERVER = 'dummy';
 			return conn.connect( params )
 				.then( function ( c ) {
-					expect( process.env.INFORMIXSERVER ).to.be.string( 'ol_informix1210' );
+					expect( process.env.INFORMIXSERVER ).to.be.string( 'informixoltp_tcp' );
 				} );
 		} );
 
@@ -96,9 +96,9 @@ describe( 'lib/Connection', function () {
 		var conn = {};
 		before( function () {
 			var pool = new Pool( {
-				database : 'test@ol_informix1210',
+				database : 'test@informixoltp_tcp',
 				username : 'informix',
-				password : 'informix'
+				password : '1nf0rm1x'
 			} );
 
 			return pool.acquire()

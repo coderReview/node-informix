@@ -9,7 +9,7 @@ var Ifx    = require( '../' ).Ifx;
 describe( 'ifx', function () {
 
 	before( function () {
-		process.env.INFORMIXSERVER = 'ol_informix1210';
+		process.env.INFORMIXSERVER = 'informixoltp_tcp';
 	} );
 
 
@@ -86,7 +86,7 @@ describe( 'ifx', function () {
 				id : 'conn:id:2001',
 				database : 'test',
 				username : 'informix',
-				password : 'informix'
+				password : '1nf0rm1x'
 			}, function ( err, conn ) {
 				expect( err ).to.be.null;
 				expect( conn ).to.be.string( 'conn:id:2001' );
@@ -107,7 +107,7 @@ describe( 'ifx', function () {
 				id : conn,
 				database : 'test',
 				username : 'informix',
-				password : 'informix'
+				password : '1nf0rm1x'
 			}, function ( err, conn ) {
 				done( err );
 			} );
@@ -139,7 +139,7 @@ describe( 'ifx', function () {
 				id : connid,
 				database : 'test',
 				username : 'informix',
-				password : 'informix'
+				password : '1nf0rm1x'
 			}, function ( err, connid ) {
 				done( err );
 			} );
@@ -256,7 +256,7 @@ describe( 'ifx', function () {
 					id : connid,
 					database : 'test',
 					username : 'informix',
-					password : 'informix'
+					password : '1nf0rm1x'
 				}, function ( err, conn ) {
 					expect( err ).to.be.null;
 
@@ -293,7 +293,7 @@ describe( 'ifx', function () {
 					id : connid,
 					database : 'test',
 					username : 'informix',
-					password : 'informix'
+					password : '1nf0rm1x'
 				}, function ( err, conn ) {
 					expect( err ).to.be.null;
 

@@ -9,7 +9,7 @@ while [[ $status -ne 0 ]] && [[ $attempt -le 5 ]] ; do
 	echo "attempt [${attempt}] using $sql"
 	let attempt+=1
 
-	INFORMIXSERVER=ol_informix1210 dbaccess - $sql
+	INFORMIXSERVER=informixoltp_tcp dbaccess - $sql
 	status=$?
 
 	echo "dbaccess returned [${status}]"

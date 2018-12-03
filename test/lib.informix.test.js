@@ -14,15 +14,15 @@ var Pool       = require( '../lib/pool' );
 describe( 'lib/Informix', function () {
 
 	var opts = {
-		database : 'test@ol_informix1210',
-		username : 'informix',
-		password : 'informix'
+		database : 'test@informixoltp_tcp',
+    username : 'informix',
+    password : '1nf0rm1x'
 	};
 
 
 	it( 'should set connection pool options', function () {
 		var opts = {
-			database : 'dummy@ol_informix1210',
+			database : 'dummy@informixoltp_tcp',
 			pool : {
 				max : 2,
 				min : 1

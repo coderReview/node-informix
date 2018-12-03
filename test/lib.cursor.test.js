@@ -17,9 +17,9 @@ describe( 'lib/Cursor', function () {
 	before( function () {
 		var pool = new Pool( {
 			max : 1,
-			database : 'test@ol_informix1210',
-			username : 'informix',
-			password : 'informix'
+			database : 'test@informixoltp_tcp',
+      username : 'informix',
+      password : '1nf0rm1x'
 		} );
 
 		return pool.acquire()

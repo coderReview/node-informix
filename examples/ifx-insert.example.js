@@ -17,9 +17,9 @@ var ifx    = new Ifx();
 
 // connect to the database, we use a UUID v4 as the connection ID
 ifx.connect( {
-	database : 'test@ol_informix1210',
+	database : 'test@informixoltp_tcp',
 	username : 'informix',
-	password : 'informix',
+	password : '1nf0rm1x',
 	id : uuid.v4()
 }, function ( err, connid ) {
 

@@ -10,9 +10,9 @@
 
 var Informix = require( '../' ).Informix;
 var informix = new Informix( {
-	database : 'test@ol_informix1210',
+	database : 'test@informixoltp_tcp',
 	username : 'informix',
-	password : 'informix'
+	password : '1nf0rm1x'
 } );
 
 

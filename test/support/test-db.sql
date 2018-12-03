@@ -1,5 +1,5 @@
 
-connect to '@ol_informix1210' user 'informix' using 'informix';
+connect to '@informixoltp_tcp' user 'informix' using '1nf0rm1x';
 
 drop database if exists test;
 create database test with buffered log;
@@ -50,6 +50,7 @@ create table tdatatypes (
 	dt        datetime year to fraction,
 	date      date,
 	decimal   decimal,
-	bigint    bigint
+	bigint    bigint,
+	atext     text
 );
 
