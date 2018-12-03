@@ -13,7 +13,8 @@
     "lint": "jshint index.js examples lib test",
     "precodecov": "npm run coverage:lcovonly",
     "precoveralls": "npm run coverage:lcovonly",
-    "test": "mocha"
+    "test": "mocha",
+    "test:docker": "npm install --unsafe-perm && mocha"
   },
   "directories": {
     "example": "./examples",

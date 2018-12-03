@@ -129,6 +129,25 @@ describe( 'data-types', () => {
 					.with.nested.property( '[0][0]' )
 					.that.eql( atext );
 			} );
+  } );
+  
+  it( 'should update text values correctly', () => {
+    const newText = 'A NEW TEXT';
+    return informix.prepare( 'update tdatatypes set atext = ?;' )
+      .then( ( stmt ) => {
+        return stmt.exec([ newText ]);
+      })
+      .then ( ( ) => {
+        return informix.query( 'select atext from tdatatypes;' )
+      })
+			.then( ( cursor ) => {
+				return cursor.fetchAll( { close : true } );
+			} )
+			.then( ( results ) => {
+				expect( results ).to.have.length( 1 )
+					.with.nested.property( '[0][0]' )
+					.that.eql( newText );
+			} );
 	} );
 
 } );
